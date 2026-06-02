@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>House Price Prediction</h1>
+
+    <form action="/predict" method="post">
+
+        <label>Lot Area</label>
+        <input type="number" name="lot_area" required>
+
+        <label>Year Sold</label>
+        <input type="number" name="yr_sold" required>
+
+        <button type="submit">Predict</button>
+
+    </form>
+
+    {% if prediction %}
+        <h2>{{ prediction }}</h2>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
